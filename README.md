@@ -24,12 +24,15 @@ wsl -d {distro_name}
 ### Get start from Dockerfile
 
 ```powershell
-docker build --build-arg USER={user_name} --build-arg PASSWD={pass word} -t {distro_name} .
+docker build --build-arg USER={user_name} --build-arg PASSWD={pass_word} -t {distro_name} .
 docker run --name {distro_name} {distro_name}
 docker export --output="{distro_name}.tar.gz" {distro_name}
 
 ...
 ```
+
+`user_name`: your account's name
+`pass_word`: your account's password
 
 It is similar with general Dockerfile usage.
 The tasks performed after exporting the image to a tar.gz file are the same as using a “prebuilt image”.
